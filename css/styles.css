@@ -1,0 +1,23 @@
+body {
+  margin: 0;
+}
+
+header {
+  align-items: center;
+  background-color: #283e4a;
+  display: flex;
+  height: 52px;
+}
+
+.header-content {
+  color: #ffffff;
+  display: inline-flex;
+  flex-direction: column;
+  text-align: center;
+  width: 100%;
+}
+
+.fa-linkedin {
+  background-color: #ffffff;
+  color: #0077b5;
+}
