@@ -11,17 +11,5 @@ const addToDoItem = event => {
 
 const renderToDoItems = () => toDoItems.map(toDoItem => `<li>${toDoItem}</li>`).toString().replace(/,/g,"");
 
-const string = `
-<h1>To Do List</h1>
-<form onsubmit="addToDoItem(event)">
-    <label for="addToDo">Enter To Do Item: </label>
-    <input type="text" id="addToDo" name="addToDo" value="">
-    <input type="submit" value="Add">
-</form>
-<ul id="toDoList">
-    ${renderToDoItems()}
-</ul>
-`
-
-document.getElementById("app").innerHTML = string;
+document.getElementById("toDoList").innerHTML = renderToDoItems();
 
