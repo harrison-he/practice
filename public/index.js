@@ -1,31 +1,40 @@
-const toDoItems = ["Example To Do", "Example To Do 2"];
+const url = "https://polar-tor-22988.herokuapp.com";
 
-
-
-const addToDoItem = event => {
+const addToDoItem = async event => {
     event.preventDefault();
     const value = event.target[0].value;
     if (value) {
-        toDoItems.push(value);
-
-        const node = document.createElement("LI");
-        node.innerHTML = value;
-        // const textNode = document.createTextNode(`${value} `);
-        // node.appendChild(textNode);
-
-        // const buttonNode = document.createElement("BUTTON");
-        // const buttonTextNode = document.createTextNode("X");
-
-        // buttonNode.appendChild(buttonTextNode);
-        // node.appendChild(buttonNode);
-
-        document.getElementById("toDoList").appendChild(node);
         document.getElementById("addToDo").value = "";
+
+        try {
+            await fetch(`${url}/api/toDo`, {
+                method: "POST",
+                body: value
+            })
+
+            const node = document.createElement("LI");
+            node.innerHTML = value;
+
+            document.getElementById("toDoList").appendChild(node);
+        } catch (err) {
+            console.log(err)
+        }
     }
-   
+
 }
 
-const renderToDoItems = () => toDoItems.map(toDoItem => `<li>${toDoItem}</li>`).toString().replace(/,/g,"");
+const renderToDoItems = async () => {
+    let toDoItems = [];
+    try {
+        const response = await fetch(`${url}/api/toDo`)
+        toDoItems = await response.json();
 
-document.getElementById("toDoList").innerHTML = renderToDoItems();
+    } catch (err) {
+        console.log(err)
+    }
+    return toDoItems.map(toDoItem => `<li>${toDoItem}</li>`).toString().replace(/,/g, "")
+}
+(async () => document.getElementById("toDoList").innerHTML = await renderToDoItems())()
+
+
 
