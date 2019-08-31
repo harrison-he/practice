@@ -3,9 +3,8 @@ const router = express.Router()
 const ToDo = require('./../../models/ToDo')
 
 router.post("/", async (req, res) => {
-  console.log(req.body)
     const newToDo = new ToDo({
-        toDo: req.body.params.toDo
+        toDo: req.body.toDo
       });
   
       const toDo = await newToDo.save()
