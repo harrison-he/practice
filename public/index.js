@@ -15,7 +15,6 @@ document.getElementById("to-do-form").addEventListener("submit", async event => 
         },
         body: JSON.stringify({toDo: event.target[0].value})
     })
-
     const json = await response.json()
     const li = document.createElement("li")
     li.innerText = json.toDo
