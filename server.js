@@ -5,7 +5,7 @@ const mongoose = require('mongoose')
 
 app.use(express.json({ extended: false }));
 
-app.use(express.static("dist"))
+app.use(express.static("public"))
 
 mongoose
   .connect(process.env.MONGO_DB_URL, { useNewUrlParser: true })
