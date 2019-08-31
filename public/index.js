@@ -17,9 +17,7 @@ document.getElementById("to-do-form").addEventListener("submit", async event => 
     })
 
     const json = await response.json()
-    
     const li = document.createElement("li")
-
     li.innerText = json.toDo
 
     document.querySelector("ul").appendChild(li)
