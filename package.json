@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "start": "node server",
-    "build": "webpack",
+    "heroku-postbuild": "webpack -p",
     "dev": "webpack-dev-server --open",
     "server": "nodemon server",
     "test": "echo \"Error: no test specified\" && exit 1"
