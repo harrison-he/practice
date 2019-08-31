@@ -1,4 +1,4 @@
-const url = "https://polar-tor-22988.herokuapp.com/";
+const url = "https://polar-tor-22988.herokuapp.com";
 
 (async () => {
     const response = await fetch(`${url}/api/toDo`)
