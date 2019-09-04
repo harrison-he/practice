@@ -22,12 +22,14 @@ const deleteToDo = async event => {
 document.getElementById("to-do-form").addEventListener("submit", async event => {
     event.preventDefault()
     if (event.target[0].value) {
+        const value = event.target[0].value
+        document.getElementById("input").value = ""
         const response = await fetch(`${url}/api/toDo`, {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({toDo: event.target[0].value})
+            body: JSON.stringify({toDo: value})
         })
         const json = await response.json()
         const li = document.createElement("li")
@@ -36,7 +38,6 @@ document.getElementById("to-do-form").addEventListener("submit", async event => 
     
         document.querySelector("ul").appendChild(li)
         document.getElementById(`delete-${json._id}`).addEventListener("click",deleteToDo)
-        document.getElementById("input").value = ""
     }
     
 })
