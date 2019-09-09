@@ -16,8 +16,8 @@ router.get("/", async (req, res) => {
     res.json(toDos)
 })
 
-router.delete("/", async (req, res) => {
-    const toDelete = await ToDo.findByIdAndDelete(req.body.toDo)
+router.delete("/:id", async (req, res) => {
+    const toDelete = await ToDo.findByIdAndDelete(req.params.id)
     res.json(toDelete)
 })
 

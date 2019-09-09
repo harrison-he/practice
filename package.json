@@ -5,6 +5,7 @@
   "private": true,
   "scripts": {
     "start": "node server",
+    "client": "webpack-dev-server --open",
     "server": "nodemon server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -20,11 +21,28 @@
   },
   "homepage": "https://github.com/harrison-he/practice#readme",
   "dependencies": {
+    "@material-ui/core": "^4.4.0",
+    "@material-ui/icons": "^4.4.1",
+    "axios": "^0.19.0",
+    "cors": "^2.8.5",
     "dotenv": "^8.1.0",
+    "dotenv-webpack": "^1.7.0",
     "express": "^4.17.1",
-    "mongoose": "^5.6.11"
+    "mongoose": "^5.6.11",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-redux": "^7.1.1",
+    "redux": "^4.0.4",
+    "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
-    "nodemon": "^1.19.1"
+    "@babel/core": "^7.6.0",
+    "@babel/preset-env": "^7.6.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.6",
+    "nodemon": "^1.19.1",
+    "webpack": "^4.39.3",
+    "webpack-cli": "^3.3.8",
+    "webpack-dev-server": "^3.8.0"
   }
 }
