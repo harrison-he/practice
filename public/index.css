@@ -26,7 +26,7 @@ main {
 
 h1 {
     text-align: center;
-    margin: 10px 0;
+    margin-bottom: 10px;
 }
 
 form {
@@ -50,6 +50,7 @@ ul {
 
 #submit {
     padding: 5px 0;
+    border-radius: 0;
 }
 
 li {
