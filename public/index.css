@@ -8,6 +8,16 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+header {
+    padding: 10px 30px;
+    
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+}
+
 main {
     display: flex;
     flex-direction: column;
@@ -16,7 +26,7 @@ main {
 
 h1 {
     text-align: center;
-    margin: 30px 0;
+    margin: 10px 0;
 }
 
 form {
@@ -26,4 +36,22 @@ form {
 
 ul {
     margin: 15px 0;
+    list-style: none;
+}
+
+.delete-btn {
+    padding: 2px 5px;
+}
+
+#input {
+    margin-bottom: 5px;
+    padding: 5px 0;
+}
+
+#submit {
+    padding: 5px 0;
+}
+
+li {
+    margin-bottom: 5px;
 }
