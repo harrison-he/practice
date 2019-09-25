@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="index.css">
     <title>To Do List</title>
 </head>
 
@@ -16,13 +17,13 @@
         </nav>
     </header>
     <main>
-        <h1>Recurring To Do Items</h1>
+        <h1>Recurring Items</h1>
         <form id="recurring-form">
             <input type="text" name="recurringInput" id="recurringInput" placeholder="Enter Recurring To Do Item...">
             <select name="recurringDropdown" id="recurringDropdown">
                 <option value="daily">Daily</option>
             </select>
-            <input type="submit" value="Add to table">
+            <input type="submit" id="submit" value="Add to table">
         </form>
         <table id="recurring-table">
             <thead>
